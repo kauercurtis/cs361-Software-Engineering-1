@@ -44,9 +44,9 @@ end
 discussion = Discussion.new(title: "fake", ...)
 host = User.find(42)
 
-participants = "fake1@example.com\nfake2@example.com\nfake3@example.com"
-group = ParticipantGroup.new(participants)
-group.generate_participant_users_from_email_string
+participant_emails = "fake1@example.com\nfake2@example.com\nfake3@example.com"
+participant_group = ParticipantGroup.new(participant_emails)
+participant_group.generate_participant_users_from_email_string
 
-workflow = LaunchDiscussionWorkflow.new(discussion, host, group.participants)
+workflow = LaunchDiscussionWorkflow.new(discussion, host, participant_group.participants)
 workflow.run
